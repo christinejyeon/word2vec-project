@@ -20,8 +20,6 @@ row.names(tgmfile) <- NULL
 tgmfile$Description <- iconv(tgmfile$Description,"latin1","ASCII")
 tgmfile <- subset(tgmfile, !is.na(Description))
 
-##### Encoding french accents into utf-8
-
 save(tgmfile, file="tgmfile.Rda")
 library(openxlsx)
 write.xlsx(tgmfile, file="tgmdescriptors.xlsx")
